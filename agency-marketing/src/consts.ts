@@ -1,6 +1,7 @@
 export const SITE = {
   name: 'VocalBeam',
   site: import.meta.env.SITE_URL || 'https://marketing.simonbalfe.com',
+  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || 'https://demo.vocalbeam.com',
   logo: '/logo.svg',
   description: 'Never lose another lead. AI agents that answer calls, book appointments, and close deals while you sleep.',
 };
@@ -52,7 +53,7 @@ export const HERO = {
   badge: '50+ businesses stopped losing leads',
   headline: 'Never Lose Another Lead. Your AI Works While You Sleep.',
   subheadline: 'Every missed call is money walking out the door. Our AI agents answer instantly, book appointments, and close deals around the clock.',
-  primaryCta: { label: 'See It In Action', href: 'https://demo.vocalbeam.com' },
+  primaryCta: { label: 'See It In Action', href: SITE.demoUrl },
   secondaryCta: { label: 'Talk to a Human', href: '#workflows' },
   showAvatars: true,
 };
@@ -87,7 +88,7 @@ export const PRICING = {
 export const CTA = {
   title: 'Stop Leaving Money on the Table',
   subtitle: 'Every hour you wait, another lead goes cold.',
-  button: { label: 'See It In Action', href: 'https://demo.vocalbeam.com' },
+  button: { label: 'See It In Action', href: SITE.demoUrl },
   note: 'Free demo, no strings attached',
 };
 

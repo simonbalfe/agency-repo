@@ -4,6 +4,7 @@ export const SITE_CONFIG = {
   description: "Transform your business with cutting-edge AI automation solutions",
   founderVideoUrl: "https://your-r2-storage-url.com/founder-video.mp4",
   calendlyUrl: "https://calendly.com/vocalbeam/30min",
+  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || "https://demo.vocalbeam.com",
 }
 
 export const PRODUCTS = [

@@ -24,7 +24,7 @@ export function Hero() {
             </p>
             <div className="flex flex-row items-center justify-center gap-4">
               <Button
-                onClick={() => window.location.href = "https://demo.vocalbeam.com"}
+                onClick={() => window.location.href = SITE_CONFIG.demoUrl}
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
