@@ -52,7 +52,7 @@ export const HERO = {
   badge: '50+ businesses stopped losing leads',
   headline: 'Never Lose Another Lead. Your AI Works While You Sleep.',
   subheadline: 'Every missed call is money walking out the door. Our AI agents answer instantly, book appointments, and close deals around the clock.',
-  primaryCta: { label: 'See It In Action', href: '/demo' },
+  primaryCta: { label: 'See It In Action', href: 'https://demo.vocalbeam.com' },
   secondaryCta: { label: 'Talk to a Human', href: '#workflows' },
   showAvatars: true,
 };
@@ -87,7 +87,7 @@ export const PRICING = {
 export const CTA = {
   title: 'Stop Leaving Money on the Table',
   subtitle: 'Every hour you wait, another lead goes cold.',
-  button: { label: 'See It In Action', href: '/demo' },
+  button: { label: 'See It In Action', href: 'https://demo.vocalbeam.com' },
   note: 'Free demo, no strings attached',
 };
 

@@ -20,7 +20,7 @@ export function Navigation() {
           </motion.div>
           <div className="flex items-center space-x-8">
             <a 
-              href="/demo" 
+              href="https://demo.vocalbeam.com" 
               className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:underline decoration-2 underline-offset-4 transition-all"
             >
               Demo
