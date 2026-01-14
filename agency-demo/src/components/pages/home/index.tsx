@@ -14,9 +14,9 @@ export function HomePage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Demo 1</CardTitle>
+                        <CardTitle>AI Receptionist</CardTitle>
                         <CardDescription>
-                            A simple email-gated demo.
+                            A voice-enabled AI receptionist that can handle scheduling and inquiries.
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -29,4 +29,3 @@ export function HomePage() {
         </div>
     )
 }
-

@@ -3,15 +3,7 @@ import { useUser } from "@/src/hooks/use-user"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { Loader2 } from "lucide-react"
-import Link from "next/link"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card"
-import { Button } from "@/src/components/ui/button"
+import { VoiceAgent } from "@/src/components/voice-agent"
 
 export function DemoPage() {
     const { user, loading } = useUser()
@@ -37,25 +29,19 @@ export function DemoPage() {
 
     return (
         <div className="container mx-auto py-10 px-4">
-            <h1 className="text-3xl font-bold mb-4">Demo Page</h1>
-            <p className="text-lg text-muted-foreground mb-8">
-                Welcome to the email-gated demo! You are verified as {user.email}.
-            </p>
+            <div className="flex flex-col gap-2 mb-8">
+                <h1 className="text-3xl font-bold">Available Agents</h1>
+                <p className="text-muted-foreground">
+                    Select an AI agent to interact with. Verified as {user.email}.
+                </p>
+            </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Marketing Agency Receptionist</CardTitle>
-                        <CardDescription>
-                            Talk to our AI receptionist who can handle scheduling and inquiries.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <Link href="/demo/receptionist">
-                            <Button className="w-full">Open Demo</Button>
-                        </Link>
-                    </CardContent>
-                </Card>
+                <VoiceAgent 
+                    agentId="agent_0001k99xchp0faab4xrndne60sft"
+                    name="Marketing Receptionist"
+                    description="Handle scheduling, inquiries, and client intake with a voice-enabled receptionist."
+                />
             </div>
         </div>
     )

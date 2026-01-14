@@ -11,12 +11,6 @@ import { Card } from "@/src/components/ui/card"
 import { Orb } from "@/src/components/ui/orb"
 import { ShimmeringText } from "@/src/components/ui/shimmering-text"
 
-const DEFAULT_AGENT = {
-  agentId: "agent_0001k99xchp0faab4xrndne60sft",
-  name: "Marketing Agency Receptionist",
-  description: "Tap to start voice chat",
-}
-
 type AgentState =
   | "disconnected"
   | "connecting"
@@ -24,7 +18,13 @@ type AgentState =
   | "disconnecting"
   | null
 
-export default function Page() {
+interface VoiceAgentProps {
+    agentId: string
+    name: string
+    description: string
+}
+
+export function VoiceAgent({ agentId, name, description }: VoiceAgentProps) {
   const [agentState, setAgentState] = useState<AgentState>("disconnected")
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
@@ -43,7 +43,7 @@ export default function Page() {
       setErrorMessage(null)
       await navigator.mediaDevices.getUserMedia({ audio: true })
       await conversation.startSession({
-        agentId: DEFAULT_AGENT.agentId,
+        agentId: agentId,
         connectionType: "webrtc",
         onStatusChange: (status) => setAgentState(status.status),
       })
@@ -54,7 +54,7 @@ export default function Page() {
         setErrorMessage("Please enable microphone permissions in your browser.")
       }
     }
-  }, [conversation])
+  }, [conversation, agentId])
 
   const handleCall = useCallback(() => {
     if (agentState === "disconnected" || agentState === null) {
@@ -97,7 +97,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-xl font-semibold">{DEFAULT_AGENT.name}</h2>
+          <h2 className="text-xl font-semibold">{name}</h2>
           <AnimatePresence mode="wait">
             {errorMessage ? (
               <motion.p
@@ -117,7 +117,7 @@ export default function Page() {
                 exit={{ opacity: 0, y: 10 }}
                 className="text-muted-foreground text-sm"
               >
-                {DEFAULT_AGENT.description}
+                {description}
               </motion.p>
             ) : (
               <motion.div
