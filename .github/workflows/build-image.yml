@@ -5,11 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'
-      - 'public/**'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'Dockerfile'
+      - 'agency-demo/**'
 
 jobs:
   build:
@@ -35,13 +31,13 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: agency-demo
+          file: agency-demo/Dockerfile
           push: true
           platforms: linux/amd64
           tags: |
-            ghcr.io/simonbalfe/agency-demo:latest
-            ghcr.io/simonbalfe/agency-demo:${{ github.sha }}
+            ghcr.io/simonbalfe/agency-repo:latest
+            ghcr.io/simonbalfe/agency-repo:${{ github.sha }}
           build-args: |
             RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
             NEXT_PUBLIC_APP_URL=${{ secrets.NEXT_PUBLIC_APP_URL }}
