@@ -12,7 +12,7 @@ import { Orb } from "@/src/components/ui/orb"
 import { ShimmeringText } from "@/src/components/ui/shimmering-text"
 
 const DEFAULT_AGENT = {
-  agentId: "agent_1801k9wr7rgte29tgvqebmh8b2dh",
+  agentId: "agent_0001k99xchp0faab4xrndne60sft",
   name: "Marketing Agency Receptionist",
   description: "Tap to start voice chat",
 }
