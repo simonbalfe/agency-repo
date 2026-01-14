@@ -1,0 +1,4 @@
+- No comments
+- Use `pnpm` install
+- Never edit `ui` folder compoennts these are shadcn
+- Always use global.css for theminig unless asked toherwise to use other ones

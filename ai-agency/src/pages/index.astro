@@ -1,0 +1,25 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { Hero } from "@/components/sections/hero";
+import { Services } from "@/components/sections/services";
+import { SocialProof } from "@/components/sections/social-proof";
+import { BlogCarousel } from "@/components/sections/blog-carousel";
+import { METADATA } from "../consts";
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<PageLayout
+	metadata={{
+		title: "VocalBeam - AI Automation Agency",
+		description: METADATA.description,
+	}}
+>
+	<Hero client:load />
+	<Services client:load />
+	<SocialProof />
+	<BlogCarousel client:load posts={posts} />
+</PageLayout>

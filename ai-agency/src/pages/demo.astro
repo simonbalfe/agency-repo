@@ -1,0 +1,37 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { METADATA } from "../consts";
+
+const title = "AI Agent Demo";
+const description = "Watch our AI agent in action and see how it can transform your business.";
+---
+
+<PageLayout
+  metadata={{
+    title: `${title} - VocalBeam`,
+    description: description,
+  }}
+>
+  <section class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h1 class="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+        See Our AI Agent In Action
+      </h1>
+      <p class="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+        Watch this quick demonstration of how our AI voice and chat agents handle customer inquiries, book appointments, and streamline business operations.
+      </p>
+
+      <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-border bg-muted">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/TlclS4wLWgY"
+          title="AI Agent Demo Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</PageLayout>
