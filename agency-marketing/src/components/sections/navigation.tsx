@@ -16,20 +16,20 @@ export function Navigation() {
             className="text-2xl font-light text-foreground cursor-pointer tracking-tight"
             onClick={() => window.location.href = "/"}
           >
-            VocalBeam
+            LaunchStack
           </motion.div>
           <div className="flex items-center space-x-8">
+            <a 
+              href="/#services" 
+              className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:underline decoration-2 underline-offset-4 transition-all"
+            >
+              Services
+            </a>
             <a 
               href={SITE_CONFIG.demoUrl} 
               className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:underline decoration-2 underline-offset-4 transition-all"
             >
-              Demo
-            </a>
-            <a 
-              href="/analytics" 
-              className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:underline decoration-2 underline-offset-4 transition-all"
-            >
-              Analytics
+              Our Work
             </a>
             <a 
               href="/blog" 
@@ -39,7 +39,7 @@ export function Navigation() {
             </a>
             <Button asChild size="lg" className="hidden md:flex bg-primary text-primary-foreground hover:bg-primary/90">
               <a href={SITE_CONFIG.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                Book a Call
+                Start Your Project
               </a>
             </Button>
           </div>

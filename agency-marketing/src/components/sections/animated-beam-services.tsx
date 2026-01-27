@@ -3,7 +3,7 @@
 import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { Mail, UserCheck, MessageCircle } from "lucide-react";
+import { Calendar, MessageCircle } from "lucide-react";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -31,7 +31,7 @@ export function AnimatedBeamServices() {
   const inputRef3 = useRef<HTMLDivElement>(null);
   const inputRef4 = useRef<HTMLDivElement>(null);
   const inputRef5 = useRef<HTMLDivElement>(null);
-  const aiRef = useRef<HTMLDivElement>(null);
+  const botRef = useRef<HTMLDivElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -48,23 +48,23 @@ export function AnimatedBeamServices() {
                 <Icons.messenger />
             </Circle>
             <Circle ref={inputRef3}>
-                <Mail className="h-6 w-6" />
+                <Icons.sms />
             </Circle>
             <Circle ref={inputRef4}>
                 <MessageCircle className="h-6 w-6" />
             </Circle>
             <Circle ref={inputRef5}>
-                <Icons.googleDrive />
+                <Icons.instagram />
             </Circle>
         </div>
         <div className="flex flex-col justify-center">
-          <Circle ref={aiRef} className="size-16">
-            <Icons.openai />
+          <Circle ref={botRef} className="size-16">
+            <Icons.bot />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={outputRef}>
-            <UserCheck className="h-6 w-6" />
+            <Calendar className="h-6 w-6" />
           </Circle>
         </div>
       </div>
@@ -72,31 +72,31 @@ export function AnimatedBeamServices() {
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={inputRef1}
-        toRef={aiRef}
+        toRef={botRef}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={inputRef2}
-        toRef={aiRef}
+        toRef={botRef}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={inputRef3}
-        toRef={aiRef}
+        toRef={botRef}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={inputRef4}
-        toRef={aiRef}
+        toRef={botRef}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={inputRef5}
-        toRef={aiRef}
+        toRef={botRef}
       />
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={aiRef}
+        fromRef={botRef}
         toRef={outputRef}
       />
     </div>
@@ -104,7 +104,45 @@ export function AnimatedBeamServices() {
 }
 
 const Icons = {
-  openai: () => (
+  bot: () => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 8V4H8"/>
+      <rect width="16" height="12" x="4" y="8" rx="2"/>
+      <path d="M2 14h2"/>
+      <path d="M20 14h2"/>
+      <path d="M15 13v2"/>
+      <path d="M9 13v2"/>
+    </svg>
+  ),
+  sms: () => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+    </svg>
+  ),
+  instagram: () => (
     <svg
       width="24"
       height="24"
@@ -112,41 +150,16 @@ const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       className="h-full w-full"
     >
-      <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
-    </svg>
-  ),
-  googleDrive: () => (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 87.3 78"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-full w-full"
-    >
-      <path
-        d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z"
-        fill="#0066da"
-      />
-      <path
-        d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z"
-        fill="#00ac47"
-      />
-      <path
-        d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z"
-        fill="#ea4335"
-      />
-      <path
-        d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z"
-        fill="#00832d"
-      />
-      <path
-        d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z"
-        fill="#2684fc"
-      />
-      <path
-        d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z"
-        fill="#ffba00"
-      />
+      <defs>
+        <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#FFDC80"/>
+          <stop offset="50%" stopColor="#F56040"/>
+          <stop offset="100%" stopColor="#C13584"/>
+        </linearGradient>
+      </defs>
+      <rect width="24" height="24" rx="6" fill="url(#ig-gradient)"/>
+      <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="1.5" fill="none"/>
+      <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
     </svg>
   ),
   whatsapp: () => (

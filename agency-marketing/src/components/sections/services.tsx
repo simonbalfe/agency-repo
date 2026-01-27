@@ -11,56 +11,50 @@ import {
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { AnimatedBeamServices } from "@/components/sections/animated-beam-services"
+import { SITE_CONFIG } from "@/lib/constants"
 
 const services = [
   {
-    title: "AI That Talks Like Your Best Salesperson",
-    description: "Customers can't tell the difference. Your AI answers calls, handles objections, and books meetings while you're at dinner.",
+    title: "MVP Development",
+    description: "Got an idea? We'll turn it into a working product you can put in front of real users. No fluff—just the core features that let you validate and iterate.",
     image: "/images/cold_call.jpg",
     features: [
-      "Voice agents that sound human",
-      "Instant responses on WhatsApp & web",
-      "Appointments booked automatically",
-      "Warm leads, not tire-kickers"
+      "Full-stack web & mobile apps",
+      "User auth, payments, dashboards",
+      "Clean code you can scale later",
+      "Shipped in 4-8 weeks"
     ]
   },
   {
-    title: "Stop Doing Work a Robot Should Do",
-    description: "Data entry, follow-ups, invoice reminders—gone. Reclaim 20+ hours a week.",
+    title: "Chatbot Automation",
+    description: "Stop answering the same questions. We build AI chatbots that handle leads, customer support, and internal ops—so your team can focus on what matters.",
     image: "/images/irobot.jpg",
     features: [
-      "Your CRM updates itself",
-      "Emails sent at the perfect time",
-      "Documents processed in seconds",
-      "Systems that talk to each other"
-    ]
-  },
-  {
-    title: "Websites That Actually Convert",
-    description: "Pretty pages don't pay bills. We build fast, persuasive digital experiences that turn visitors into customers.",
-    image: "/images/1.png",
-    features: [
-      "Custom apps built for your workflow",
-      "Mobile-first, always",
-      "AI dashboards that surface insights",
-      "Landing pages that sell"
+      "Lead qualification & booking",
+      "Customer support automation",
+      "Multi-channel (web, SMS, WhatsApp)",
+      "CRM & tool integrations"
     ]
   }
 ]
 
 export function Services() {
+  const openCalendly = () => {
+    window.open(SITE_CONFIG.calendlyUrl, "_blank")
+  }
+
   return (
     <section id="services" className="w-full py-12 md:py-20 bg-background">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-light tracking-tighter sm:text-5xl">
-            Three Ways We Print You Money
+            Two Ways We Help You Move Faster
           </h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Pick one. Or let them work together.
+            Build what you need. Automate what slows you down.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {services.map((service, idx) => (
             <Card key={idx} className="flex flex-col h-full pt-0 bg-background border-border shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="px-0">
@@ -85,8 +79,8 @@ export function Services() {
                 </ul>
               </CardContent>
               <CardFooter className="gap-3 max-sm:flex-col max-sm:items-stretch">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Show Me How</Button>
-                <Button variant="outline">See Examples</Button>
+                <Button onClick={openCalendly} className="bg-primary text-primary-foreground hover:bg-primary/90">Book Discovery Call</Button>
+                <Button variant="outline" onClick={() => window.location.href = SITE_CONFIG.demoUrl}>See Our Work</Button>
               </CardFooter>
             </Card>
           ))}
@@ -95,10 +89,10 @@ export function Services() {
         <div className="mt-20">
              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
                 <h3 className="text-2xl font-light tracking-tighter sm:text-4xl">
-                    The Central Nervous System
+                    Chatbots That Connect Everything
                 </h3>
                 <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed">
-                    We unify your communication channels into one intelligent brain.
+                    One intelligent bot across all your channels—web, SMS, WhatsApp, and more.
                 </p>
             </div>
             <AnimatedBeamServices />

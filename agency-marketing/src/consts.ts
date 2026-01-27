@@ -1,9 +1,9 @@
 export const SITE = {
-  name: 'VocalBeam',
-  site: import.meta.env.SITE_URL || 'https://marketing.simonbalfe.com',
-  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || 'https://demo.vocalbeam.com',
+  name: 'LaunchStack',
+  site: import.meta.env.SITE_URL || 'https://launchstack.dev',
+  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || 'https://demo.launchstack.dev',
   logo: '/logo.svg',
-  description: 'Never lose another lead. AI agents that answer calls, book appointments, and close deals while you sleep.',
+  description: 'We build MVPs that validate fast and chatbot systems that automate your operations. From idea to launch in weeks, not months.',
 };
 
 export const GOOGLE_SITE_VERIFICATION_ID = '';
@@ -40,56 +40,55 @@ export const I18N = { language: 'en', textDirection: 'ltr' };
 
 export const NAVIGATION = {
   links: [
-    { label: 'Features', href: '/#features' },
-    { label: 'How it Works', href: '/#workflows' },
-    { label: 'Pricing', href: '/#pricing' },
+    { label: 'Services', href: '/#services' },
+    { label: 'About', href: '/#about' },
+    { label: 'Results', href: '/#social-proof' },
     { label: 'Blog', href: '/blog' },
   ],
-  cta: { label: 'Get Started', href: '' },
+  cta: { label: 'Start Your Project', href: '' },
   loginLabel: 'Log in',
 };
 
 export const HERO = {
-  badge: '50+ businesses stopped losing leads',
-  headline: 'Never Lose Another Lead. Your AI Works While You Sleep.',
-  subheadline: 'Every missed call is money walking out the door. Our AI agents answer instantly, book appointments, and close deals around the clock.',
-  primaryCta: { label: 'See It In Action', href: SITE.demoUrl },
-  secondaryCta: { label: 'Talk to a Human', href: '#workflows' },
+  badge: '50+ MVPs launched • 100+ chatbots deployed',
+  headline: 'Ship Your MVP. Automate Your Ops.',
+  subheadline: 'We build products that validate ideas fast and chatbot systems that handle the work you shouldn\'t be doing manually.',
+  primaryCta: { label: 'See Our Work', href: SITE.demoUrl },
+  secondaryCta: { label: 'Book Discovery Call', href: '#workflows' },
   showAvatars: true,
 };
 
 export const PRICING = {
-  title: 'Simple Pricing',
-  subtitle: 'Choose the plan that works for you',
+  title: 'Engagement Models',
+  subtitle: 'Fixed-scope projects or ongoing partnership—your call',
   tiers: [
     {
-      name: 'Free',
-      price: 0,
-      period: 'mo',
-      description: 'Perfect for getting started',
-      features: ['Feature one', 'Feature two', 'Basic support'],
-      cta: { label: 'Start Free', href: '' },
+      name: 'MVP Sprint',
+      price: 8000,
+      period: 'starting at',
+      description: 'Validate your idea with a working product',
+      features: ['Full-stack development', 'User auth & payments ready', 'Mobile-responsive design', 'Deployment & handoff', '30-day bug support'],
+      cta: { label: 'Scope My MVP', href: '' },
       highlighted: false,
     },
     {
-      name: 'Pro',
-      price: 29,
-      originalPrice: 49,
-      period: 'mo',
-      description: 'For growing teams',
+      name: 'Chatbot System',
+      price: 3000,
+      period: 'starting at',
+      description: 'Automate leads, support, or operations',
       badge: 'Popular',
-      features: ['Everything in Free', 'Advanced features', 'Priority support', 'API access'],
-      cta: { label: 'Get Started', href: '' },
+      features: ['Custom AI chatbot build', 'Multi-channel deployment', 'CRM/tool integrations', 'Conversation analytics', '30-day optimization'],
+      cta: { label: 'Automate Now', href: '' },
       highlighted: true,
     },
   ],
 };
 
 export const CTA = {
-  title: 'Stop Leaving Money on the Table',
-  subtitle: 'Every hour you wait, another lead goes cold.',
-  button: { label: 'See It In Action', href: SITE.demoUrl },
-  note: 'Free demo, no strings attached',
+  title: 'Ideas Die in Waiting Rooms',
+  subtitle: 'Every week you delay is a week your competitor gets ahead.',
+  button: { label: 'See Our Work', href: SITE.demoUrl },
+  note: 'Free discovery call—let\'s see if we\'re a fit',
 };
 
 export const APPS = {

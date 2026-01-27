@@ -2,6 +2,8 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
+import { Process } from "@/components/sections/process";
+import { About } from "@/components/sections/about";
 import { SocialProof } from "@/components/sections/social-proof";
 import { BlogCarousel } from "@/components/sections/blog-carousel";
 import { METADATA } from "../consts";
@@ -14,12 +16,14 @@ const posts = (await getCollection('blog')).sort(
 
 <PageLayout
 	metadata={{
-		title: "VocalBeam - AI Automation Agency",
+		title: "LaunchStack - MVP Development & Chatbot Automation Agency",
 		description: METADATA.description,
 	}}
 >
 	<Hero client:load />
 	<Services client:load />
+	<Process client:load />
+	<About client:load />
 	<SocialProof />
 	<BlogCarousel client:load posts={posts} />
 </PageLayout>

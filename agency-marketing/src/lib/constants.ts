@@ -1,86 +1,81 @@
 export const SITE_CONFIG = {
-  name: "VocalBeam",
-  tagline: "AI Automation Agency",
-  description: "Transform your business with cutting-edge AI automation solutions",
+  name: "LaunchStack",
+  tagline: "MVP Development & Chatbot Automation",
+  description: "We build MVPs that validate fast and chatbot systems that scale your operations. From idea to launch in weeks, not months.",
   founderVideoUrl: "https://your-r2-storage-url.com/founder-video.mp4",
-  calendlyUrl: "https://calendly.com/vocalbeam/30min",
-  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || "https://demo.vocalbeam.com",
+  calendlyUrl: "https://calendly.com/launchstack/discovery",
+  demoUrl: import.meta.env.PUBLIC_DEMO_URL || import.meta.env.DEMO_URL || "https://demo.launchstack.dev",
 }
 
 export const PRODUCTS = [
   {
-    title: "AI Voice",
-    description: "Outbound & Inbound calls powered by AI",
-    icon: "phone",
+    title: "MVP Development",
+    description: "Validate your idea with a working product in weeks",
+    icon: "rocket",
   },
   {
-    title: "AI Chat",
-    description: "Whatsapp, Telegram, SMS & Web Chat",
+    title: "Chatbot Automation",
+    description: "AI-powered bots that handle leads, support & operations",
     icon: "message-circle",
-  },
-  {
-    title: "AI for Business",
-    description: "Email, CRM, Mobile & Messenger Automation",
-    icon: "database",
   },
 ]
 
 export const CASE_STUDIES = [
   {
     id: 1,
-    title: "AI Receptionists for Dentist Clinics",
-    description: "Automated appointment booking and patient inquiries, reducing staff workload by 70%",
+    title: "SaaS MVP for Fitness Industry",
+    description: "Built a workout tracking platform from scratch—user auth, payment integration, and mobile-responsive dashboard in 6 weeks",
     image: "/images/2.png",
     stats: {
-      metric: "70%",
-      label: "Reduction in manual tasks",
+      metric: "2,400",
+      label: "Users in first 3 months",
     },
-    tags: ["Healthcare", "Voice AI", "Automation"],
+    tags: ["MVP", "SaaS", "React"],
   },
   {
     id: 2,
-    title: "RAG AI Chatbots for E-commerce",
-    description: "Intelligent product recommendations and customer support with 24/7 availability",
+    title: "E-commerce Support Chatbot",
+    description: "AI chatbot handling product questions, order tracking, and returns—reducing support tickets by 73%",
     image: "/images/3.png",
     stats: {
-      metric: "3x",
-      label: "Increase in conversions",
+      metric: "73%",
+      label: "Reduction in support tickets",
     },
-    tags: ["E-commerce", "RAG", "Support"],
+    tags: ["Chatbot", "E-commerce", "AI"],
   },
   {
     id: 3,
-    title: "AI Nutritionist Multi-Agent System",
-    description: "Personalized nutrition plans using multi-agent AI coordination for holistic health management",
+    title: "Real Estate Lead Qualification Bot",
+    description: "Automated chatbot qualifying buyers, checking preferences, and booking viewings directly into agent calendars",
     image: "/images/4.png",
     stats: {
-      metric: "95%",
-      label: "User satisfaction rate",
+      metric: "340%",
+      label: "Increase in qualified leads",
     },
-    tags: ["Healthcare", "Multi-Agent", "Personalization"],
+    tags: ["Chatbot", "Real Estate", "Automation"],
   },
 ]
 
 export const REVIEWS = [
   {
-    name: "Sarah Johnson",
+    name: "Marcus Thompson",
+    role: "Founder",
+    company: "FitTrack Pro",
+    content: "We had an idea and a tight budget. LaunchStack delivered a working MVP in 5 weeks that let us validate with real users. We've since raised a seed round.",
+    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=Marcus",
+  },
+  {
+    name: "Jessica Rivera",
     role: "Operations Director",
-    company: "TechFlow Solutions",
-    content: "The AI voice agent completely transformed our customer service. We're now handling 3x the call volume with zero wait times.",
-    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=Sarah",
+    company: "Luxe Interiors",
+    content: "The chatbot they built handles 80% of our customer inquiries automatically. Our team can finally focus on high-value work instead of answering the same questions.",
+    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=Jessica",
   },
   {
-    name: "Michael Chen",
+    name: "Brandon Cole",
     role: "CEO",
-    company: "GrowthX Marketing",
-    content: "Implementation was seamless. The chatbot qualifies leads better than our human team did, and it's working 24/7.",
-    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=Michael",
-  },
-  {
-    name: "David Smith",
-    role: "Practice Manager",
-    company: "City Dental",
-    content: "Our missed calls dropped to zero overnight. The AI sounds so natural that most patients don't even realize they're talking to a bot.",
-    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=David",
+    company: "PropertyMatch",
+    content: "From napkin sketch to live product in 4 weeks. The MVP they built helped us close our first 10 paying customers and prove the market was real.",
+    avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=Brandon",
   },
 ]
